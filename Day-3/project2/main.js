@@ -89,17 +89,7 @@ divtwonum(40, 5);
  * @return {number} the result
  */
 
-function operation (x, y){
-	var n = x + y;
-	// return n;
-	console.log(x  + " + " + y  + " = " + n);	
-}
-
-function sub(x, y){
-	var n = x - y;
-	// return n;
-	console.log(x  + " - " + y  + " = " + n);	
-}
+var 
 
 
 

@@ -30,5 +30,7 @@ function AnimalCreator(username, species, tagline, noises){
 	var user = {};
 	user.username = username;
 	user.species = species;
+	user.tagline = tagline;
+	user.noises  = 
 	}
 
