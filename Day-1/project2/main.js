@@ -1,23 +1,22 @@
 console.log("i'm learning javascript");
 
 /*----------*/
-/*var name1 = "Mark";
+var name1 = "Mark";
 
 function mark(a) {
 	return name + " is a variable" ;
 }
 
-mark(name1)*/
+mark(name1)
 
 /*-------*/
 
-/*var name = "John";
+var name = "John";
 var admin = name;
 alert(admin);
-*/
 /*----*/
 
-/*alert("hello world");
+//*/*/**alert("hello world");
 
 var name= "welcome";
 var grt = prompt("Enter your name");
@@ -71,9 +70,9 @@ alert(alt);*/
 
 /*------*/
 
-/* var age = 26;
- var dogage = age/7;
- console.log(dogage);*/
+var age = 26;
+var dogage = age/7;
+console.log(dogage);
 
 
  /*------*/
@@ -93,7 +92,7 @@ var country = 'India';
 // var altrt;
 
 var alt = function (a, b){
-	return  a + ", " + b ;
+	return (a + ", " + b) ;
 }
 
 alert(alt(city, country));

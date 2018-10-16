@@ -11,7 +11,10 @@ color[4] = "ultraviolet";
 
 var fourthColor = color[3];
 
+//color.push
  color.push("skyblue");
+
+ //length 
 
  console.log(color.length)
 
@@ -19,7 +22,7 @@ var fourthColor = color[3];
  console.log(color.length)
 
 
- for(var i=0; i <= color.length-1; i++){
+ for (var i=0; i <= color.length-1; i++){
  	console.log(i + ", " +color[i]);
  }
 
