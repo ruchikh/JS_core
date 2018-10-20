@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Practice-3</title>
+</head>
+
+<body>
+	  <h1>About Me</h1>
+
+  <ul>
+    <li>Nickname: <span id="nickname"></span></li>
+    <li>Favorites:  <span id="favorites"></span></li>
+    <li>Hometown: <span id="hometown"></span></li>
+  </ul>
+
+   <script>
+   	document.body.style.fontFamily = "Arial, sans-serif";
+   	var spanItem = document.getElementsByTagName('span');
+   	var eleItem = document.getElementById('nickname');
+   	eleItem.innerText = "ruchi";
+   	var eleItem1 = document.getElementById('favorites');
+   	eleItem1.innerText = "black";
+   		var eleItem2 = document.getElementById('hometown');
+   	eleItem2.innerText = "mau";
+   	var listItem = document.querySelectorAll('li');
+   	var list = listItem.forEach(element => {
+   		element.className = "listitem"
+     	element.style.color = "red";
+   	});
+
+   var image = 	document.createElement("img");
+   image.src = "http://ecx.images-amazon.com/images/I/41j2ODGkJDL._AA115_.jpg";
+   document.body.appendChild(image);
+   // image.src = 
+   // image.src.
+
+
+   </script>
+ </body>
+
+</body>
+</html>

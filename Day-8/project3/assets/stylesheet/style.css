@@ -1,0 +1,111 @@
+*{
+    -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -o-box-sizing: border-box;
+     -ms-box-sizing: border-box;
+     box-sizing: border-box;
+}
+
+
+.main_container{
+	  max-width: 1100px;
+	  width: 100%;
+  	margin: 0 auto;
+  } 
+  .circle1 {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+  }
+
+  .circle {
+  	height: 900px;
+  	width: 100%;
+  	background: linear-gradient(to bottom right, red, yellow);
+  	position: relative;
+  }
+  .watch{
+  	position: fixed;
+  	top: 50%;
+  	left: 50%;
+  	transform: translate(-50%, -50%);
+  	height: 300px;
+  	width: 300px;
+  	border-radius: 50%;
+  	border: 20px solid white;
+  	box-shadow: 0 0 8px .8px #bdc0c8;
+     /*transition: all 0.5s;*/
+    /*transition-timing-function: cubic-bezier(0.1, 2.7,0.58,1);*/
+  }
+
+  .hour {
+    position: relative;
+    top: 52%;
+    left: calc(50% - 30%);
+    /*transform: translate(-50%, -50%);*/
+    width: 30%;
+    height: 5px;
+    background: black;
+    -webkit-transform-origin: 100%;
+    animation: hr 270s linear 0s infinite normal;
+    transform: rotate(90deg);
+  }
+
+  .second {
+    position: relative;
+    top: 50%;
+    left: calc(50% - 45%);
+    width: 45%;
+    height: 3px;
+    background: black;
+    -webkit-transform-origin: 100%;
+    animation: fastest 100s linear 0s infinite normal;
+    transform: rotate(90deg);
+
+  }
+
+  .minute {
+    position: relative;
+    top: 48%;
+    left: calc(50% - 38%);
+    /*transform: translate(-50%, -50%);*/
+    width: 38%;
+    height: 3.5px;
+    background: black;
+    -webkit-transform-origin: 100%;
+    -webkit-animation: slowest 180s linear 0s infinite normal;
+    transform: rotate(90deg);
+
+  }
+/**@keyframes fastest{
+  0% {
+    transform:rotate(90deg); 
+  }
+  100% {
+    transform:rotate(274deg);
+    }
+  }*/
+
+ /* @keyframes slowest{
+  0% {
+    transform:rotate(-90deg); 
+  }
+  100% {
+    transform:rotate(274deg);
+    }
+  }
+
+   @keyframes hr{
+  0% {
+    transform:rotate(-90deg); 
+  }
+  100% {
+    transform:rotate(274deg);
+    }
+  }*/

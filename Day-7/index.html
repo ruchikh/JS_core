@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Day7_project1</title>
+</head>
+<body>
+	<script>
+		// Arrays to work on
+// var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+
+
+
+// Use the above two arrays and practice array methods
+
+
+// Find largest number in numbers
+
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+console.log(Math.max(...numbers));
+
+
+// Find longest string in strings
+
+var strings = ['this','is','a','collection','of','words'];
+
+var lgth = 0;
+var longest;
+
+for(var i=0; i < strings.length; i++){
+    if(strings[i].length > lgth){
+        var lgth = strings[i].length;
+        longest = strings[i];
+    }      
+} 
+
+console.log(longest);
+
+
+
+
+
+// Find all the even numbers
+
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+var evens = [];
+var odds = [];
+
+ function evennumbers(numbers) {
+    for (var i = 0; i < numbers.length; i++) {
+
+        if ((numbers[i] % 2) != 1) {
+            evens.push(numbers[i]);
+                console.log(evens);
+        }
+        else {
+            odds.push(numbers[i]);
+                console.log(odds);
+        }
+    }
+  }
+
+
+// Find all the odd numbers
+
+
+// Find all the words that contain 'is' use string method 'contains' includes
+/*var strings = ['this','is','a','collection','of','words'];
+var newarray = Array.toString(strings);
+console.log(string.match("is"));*/
+
+// Find all the words that contain 'is' use string method 'indexOf'
+
+var strings = ['this','is','a','collection','of','words'];
+var searchitem = "is";
+var indexOfFirst = strings.indexOf(searchitem);
+console.log('The index of the first "' + searchitem + '" from the beginning is ' + indexOfFirst);
+
+/*var a = 'how are you';
+return a.indexOf('are') > -1;*/
+
+
+// Check if all the numbers in numbers array are divisible by three use array method (every)
+
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+var divnumbers = numbers.every(numbers => numbers%3 ==0);
+console.log(divnumbers);
+
+
+
+
+//  Sort Array from smallest to largest
+
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+numbers.sort(function(a, b) {
+  return a - b;
+});
+console.log(numbers);
+
+
+// Remove the last word in strings
+
+var strings = ['this','is','a','collection','of','words'];
+strings.pop();
+console.log(strings);
+
+
+
+// Add a new word in the array
+
+var strings = ['this','is','a','collection','of','words'];
+strings.push("ruchi");
+console.log(strings);
+
+
+
+// Remove the first word in the array
+
+var strings = ['this','is','a','collection','of','words'];
+strings.shift();
+console.log(strings);
+
+
+// Place a new word at the start of the array use (unshift)
+
+var strings = ['this','is','a','collection','of','words'];
+strings.unshift("ruchi");
+console.log(strings);
+
+
+
+// Make a subset of numbers array [18,9,7,11]
+
+
+// Make a subset of strings array ['a','collection']
+
+var strings = ['a','collection'];
+console.log(strings.slice(0));
+
+
+// Replace 12 & 18 with 1221 and 1881
+
+var numbers = [12, 18];
+
+numbers.reverse();
+console.log(numbers);
+
+
+// Replace words with string in strings array
+
+
+
+// Customers Array
+var customers = [
+    { firstname : 'Joe', lastname : 'Blogs'},
+    { firstname : 'John', lastname : 'Smith'},
+    { firstname : 'Dave', lastname : 'Jones'},
+    { firstname : 'Jack', lastname : 'White'}
+];
+// Find all customers whose firstname starts with 'J'
+
+
+
+// Create new array with firstname and lastname
+
+
+// Sort the array created above alphabetically
+
+	</script>
+
+</body>
+</html>

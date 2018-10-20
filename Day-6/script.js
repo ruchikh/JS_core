@@ -62,6 +62,10 @@ convertname("Rahul Dravid");
 
 
 
+
+
+
+
 // Write a JavaScript function to parameterize a string
 // Input -> (String) -> ('The Perks Of Being A Wallflower')
 // Output -> (String) -> 'the-perks-of-being-a-wallflower'
@@ -99,10 +103,23 @@ capfirstletter("hello batman from India");
 lowertoupper('AaBbcVv');
 */
 
+function uptolow(string){
+	var splited = string.split('');
+
+	for(var i = 0; i < splited.length; i++){
+		// let value = splited[i];
+		if(splited[i] == splited[i].toUpperCase()){
+		splited[i] = splited[i].toLowerCase();
+	} else {
+		splited[i] = splited[i].toUpperCase();
+	}
+	}	
+	return splited.join('');
+}
 
 // Write a JavaScript function to convert a string into camel case.
 // Input (String) -> 'Learning about js'
-// Output -> 'Learning About Js'
+// Output -> 'LearningAboutJs'
 
 function camelcase(string){
 	var arraysplit = string.split(' ');
@@ -110,7 +127,7 @@ function camelcase(string){
 	for(var i=0; i < arraysplit.length; i++){
 		arraysplit[i] = arraysplit[i].charAt(0).toUpperCase() + arraysplit[i].substring(1);
 	}
-	return arraysplit.join(' ');
+	return arraysplit.join('');
 }
 camelcase("Learning about js");
 
@@ -118,6 +135,13 @@ camelcase("Learning about js");
 // Write a JavaScript function to uncamelize a string
 // Input (String) -> 'LearningAboutJs'
 // Output -> 'Learning About Js'
+
+function uncamelcase(string){
+
+ return string.replace(/([A-Z]+)/g, " $1");
+}
+
+uncamelcase("LearningAboutJs");
 
 
 
@@ -140,4 +164,10 @@ function repeatsent(i){
 // Write a JavaScript function to humanized number
 // Input -> (Number) -> 1 or 2
 // Output -> (String) -> 1st or 2nd
+
+
+
+function humanized(number){
+    
+}
 

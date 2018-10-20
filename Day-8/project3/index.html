@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+  <link rel="stylesheet" type="text/css" href="assets/stylesheet/style.css"> 
+</head>
+<body>
+ <section class="main_container">
+ 		<div class = "circle">
+ 			<div class="watch">
+ 				<div class= "hour"></div>
+ 				<div class= "second"></div>
+ 				<div class= "minute"></div>
+ 				<div class="circle1"></div>
+ 			</div>
+ 		</div>
+ </section>
+
+
+	<script>
+		const secondhand = document.querySelector('.second');
+		const hourhand = document.querySelector('.hour');
+		const minhand = document.querySelector('.minute');
+			function setDate() {
+				const now = new Date();
+				const second = now.getSeconds();
+				const secondsDegrees = ((second / 60) * 360 + 90)
+				secondhand.style.transform = `rotate(${secondsDegrees}deg)`;
+				console.log(second);
+
+				const minute = now.getMinutes();
+				const minutesDegrees = ((minute / 60) * 360 + 90)
+				minhand.style.transform = `rotate(${minutesDegrees}deg)`;
+				console.log(minute);
+
+				const hour = now.getHours();
+				const hourDegrees = ((hour / 12) * 360 + 90);
+				hourhand.style.transform = `rotate(${hourDegrees}deg)`;
+				console.log(hour);
+
+			}
+
+			setInterval(setDate, 1000);
+
+	</script>
+</body>
+</html>
