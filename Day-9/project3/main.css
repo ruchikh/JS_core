@@ -1,0 +1,41 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+
+body {
+  background: antiquewhite;
+  font-family: Open Sans;
+}
+.container {
+  position: fixed;
+  width: 70%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+blockquote {
+  position: relative;
+  font-size: 48px;
+  line-height: 56px;
+  padding-left: 40px;
+  border-left: 6px solid #9f5757;
+  min-height: 200px;
+}
+
+blockquote span {
+  display: block;
+  text-align: right;
+  font-size: 24px;
+  line-height: 40px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+.button {
+  text-align: center;
+}
+.random-button {
+  padding: 10px 15px;
+  background: antiquewhite;
+  font-size: 15px;
+  color: #676767;
+  border: 1px dashed #e78a8a;
+}

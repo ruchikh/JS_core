@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Todo-List</title>
+	<link rel="stylesheet" type="text/css" href="assets/stylesheet/style.css">
+</head>
+<body>
+
+	<input type="text" class="todo-text" placeholder="Enter a text"></input>
+	<button class="btn">submit</button>
+
+	<ul class="todo-list"></ul>
+
+	<script>
+		let todovalue = document.querySelector(".todo-text");
+  	let button = document.querySelector(".btn");
+  	var ul = document.querySelector(".todo-list");
+
+  	
+  /*	var p = document.createElement('p');
+  	li.appendChild(p);
+  	ul.appendChild(li);*/
+
+
+  function addlist(event){
+    var li = document.createElement('li');
+    if(todovalue.value){
+    	li.innerText = todovalue.value;
+    	ul.appendChild(li);
+    	todovalue.value = "";
+    }
+  }
+
+   button.addEventListener("click", addlist)
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
