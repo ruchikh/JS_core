@@ -76,16 +76,19 @@ function addlist(){
 	    removeTask.setAttribute("value", "X");
 	    removeTask.setAttribute("id", "removeButton");
 	    li.appendChild(removeTask);
+
 	    removeTask.style.background =  "transparent";
 	    removeTask.style.height = "20px";
 	    removeTask.style.weight = "20px";
 	    removeTask.style.borderRadius = "50%";
-	     removeTask.style.outline = "none";
-	     removeTask.style.border = "1px solid black";
-	     removeTask.style.cursor = "pointer";
+	    removeTask.style.outline = "none";
+	    removeTask.style.border = "1px solid black";
+	    removeTask.style.cursor = "pointer";
+
       removeTask.onclick = function(e){
       	if(checkbox.checked){
-        var deleteitem = this.parentNode.remove();
+      		elem.done = true;
+        	var deleteitem = this.parentNode.remove();
        /* var parent_node = deleteitem.parentNode;
         parent_node.removeChild(deleteitem);*/
       }

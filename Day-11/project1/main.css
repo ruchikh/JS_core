@@ -1,0 +1,29 @@
+#boxes-container > * {
+  border: 3px solid seagreen;
+}
+
+.box {
+  padding: 10px;
+  width: 250px;
+  height: 200px;
+  margin:10px;
+  display:inline-block;
+  vertical-align:bottom;
+}
+
+#boxes-container > .student-box {
+  border: 3px solid crimson;
+}
+
+.box p {
+  margin: 20px;
+}
+
+
+.circle {
+  width: 100px;
+  height: 100px;
+  background: fuchsia;
+  border-radius: 50%;
+  margin: 5px;
+}
