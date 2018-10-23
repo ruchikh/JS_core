@@ -6,36 +6,102 @@
 	<link rel="stylesheet" type="text/css" href="assets/stylesheet/style.css">
 </head>
 <body>
+	<div class = "wrapper">
+		<h1>To-Do-List</h1>
+		<div class= "secondary-wrapper">
+			<input type="text" class="todo-text" placeholder="What needs to be done?"></input>
+			<!-- <button class="btn">Submit</button> -->
+			<ul class="todo-list"></ul>
+		</div>
+	</div>
+	
 
-	<input type="text" class="todo-text" placeholder="Enter a text"></input>
-	<button class="btn">submit</button>
-
-	<ul class="todo-list"></ul>
+	
 
 	<script>
 		let todovalue = document.querySelector(".todo-text");
   	let button = document.querySelector(".btn");
   	var ul = document.querySelector(".todo-list");
-
   	
-  /*	var p = document.createElement('p');
-  	li.appendChild(p);
-  	ul.appendChild(li);*/
 
 
+/*
   function addlist(event){
     var li = document.createElement('li');
     if(todovalue.value){
     	li.innerText = todovalue.value;
     	ul.appendChild(li);
     	todovalue.value = "";
+
     }
+  }*/
+
+  arr1 = [];
+function addlist(){
+	  var obj = {
+  	name: "",
+  	done: false
+  }
+  obj.name = todovalue.value;
+  arr1.push(obj);
+}
+  
+
+  function todolist(){
+  	var li = document.createElement('li');
+  	if(todovalue.value){
+  	arr1.forEach((elem, i) => {
+  		li.innerText = elem.name;
+  		ul.appendChild(li);
+
+  		li.setAttribute('data-id', i) ;
+  		var checkbox = document.createElement('input');
+  		checkbox.setAttribute('type', 'checkbox');
+
+  		checkbox.setAttribute("data-id", i)
+  		li.prepend(checkbox);
+  		li.style.listStyleType = "none";
+  		li.style.fontSize = "20px";
+  		var creatspan = document.createElement('span');
+  		creatspan.innerText = "";
+  		li.appendChild(creatspan);
+  		creatspan.style.margin = "10px";
+    	todovalue.value = "";
+
+
+  		// Delete to-do-list
+
+	  	var removeTask = document.createElement('input');
+	    removeTask.setAttribute('type', 'button');
+	    removeTask.setAttribute("value", "X");
+	    removeTask.setAttribute("id", "removeButton");
+	    li.appendChild(removeTask);
+	    removeTask.style.background =  "transparent";
+	    removeTask.style.height = "20px";
+	    removeTask.style.weight = "20px";
+	    removeTask.style.borderRadius = "50%";
+	     removeTask.style.outline = "none";
+	     removeTask.style.border = "1px solid black";
+	     removeTask.style.cursor = "pointer";
+      removeTask.onclick = function(e){
+      	if(checkbox.checked){
+        var deleteitem = this.parentNode.remove();
+       /* var parent_node = deleteitem.parentNode;
+        parent_node.removeChild(deleteitem);*/
+      }
+	    }	    
+  	})
+  }
   }
 
-   button.addEventListener("click", addlist)
 
-
-
+function generate(e){
+    if(e.code === "Enter"){
+        addlist();
+        todolist();
+    }
+}
+window.addEventListener("keydown", generate);
 
 
 

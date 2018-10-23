@@ -4,6 +4,7 @@ var quotes;
 
 
 
+
 quotes = [
     {
         "quoteAuthor": "Thomas Edison",
@@ -314,3 +315,30 @@ quotes = [
         "quoteText": "Great talent finds happiness in execution."
     }
 ];
+
+var quotetext = document.querySelector(".quote p");
+var quoteauth = document.querySelector(".quote-text span");
+
+function changequotes(){
+    var quote = quotes[random()];
+    quotetext.innerHTML = quote.quoteText;
+    quoteauth.innerHTML = quote.quoteAuthor;
+}
+// console.log(changequotes);
+function random(){
+    let randomnumber = 0
+    randomnumber = Math.floor(Math.random() * 77);
+    return randomnumber;
+}
+
+
+function generate(e){
+    if(e.code === "Space"){
+        changequotes();
+    }
+}
+window.addEventListener("keydown", generate);
+
+
+ 
+

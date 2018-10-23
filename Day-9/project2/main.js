@@ -18,5 +18,4 @@ function changeColor() {
   var col = document.getElementById("background-color");
   col.style.backgroundColor = makeRandomColor();
 }
-
 changeColor()
