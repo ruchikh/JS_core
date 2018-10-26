@@ -24,7 +24,8 @@ body {
 .footer{
 	background: rgba(252,252,252);
 	box-shadow: 0px 0px 5px 5px #888888;
-	padding: 20px;
+	padding: 25px;
+
 
 }
 
@@ -67,6 +68,10 @@ ul {
 	background: transparent;
 	border: none;
 	cursor: pointer;
+	/*display: none;*/
+}
+.delete:hover {
+	display: block;
 }
 
 .todo-mvc {
@@ -82,10 +87,11 @@ input[type=checkbox] {
 	padding: 5px;
 	border-radius: 5px;
 	margin: 7px;
+
 }
 
 .style_active:hover{
-	border: 1px solid rgba(175,47,47,0.15);
+	border: 1px solid rgba(175,47,47);
 	cursor: pointer;
 }
 .anchor{
@@ -95,26 +101,31 @@ input[type=checkbox] {
 .anchor:hover{
 	text-decoration: underline;
 }
+.border{
+	border: 1px solid transparent;
+}
+
 
 .style_completed{
 	padding: 5px;
 	border-radius: 5px;
 	margin: 7px;
-}
+	}
 
 .style_completed:hover{
-	border: 1px solid rgba(175,47,47,0.15);
+	border: 1px solid rgba(175,47,47);
 	cursor: pointer;
 }
 
 .style_all{
-	padding: 5px;
+	padding: 4px;
 	border-radius: 5px;
 	margin: 7px;
+	border: 1px solid rgba(175,47,47,0.15);
 }
 
 .style_all:hover{
-	border: 1px solid rgba(175,47,47,0.15);
+	border: 1px solid rgba(175,47,47);
 	cursor: pointer;
 }
 

@@ -8,6 +8,7 @@ var completelink = document.querySelector(".style_completed");
 var activelink = document.querySelector(".style_active");
 var alllink = document.querySelector('.style_all');
 var anchorlink = document.querySelector('.anchor')
+var countitem = document.querySelector(".counting")
 
 
 let todolist = JSON.parse(localStorage.getItem('items')) || [];
@@ -37,6 +38,7 @@ function displaylist(ulitem = [], arrList){
     </li>
     `;
   }).join('');
+  countitems();
 }
 
 function deleteitem(e){
@@ -81,7 +83,10 @@ function clearcompleted(e) {
 	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
 }
 
-
+function countitems(){
+	var itemleft = todolist.filter(elem => !elem.done).length;
+	countitem.innerText = `${itemleft} Item Left`;
+}
 
 
 
@@ -94,6 +99,7 @@ alllink.addEventListener('click', allitems)
 anchorlink.addEventListener('click', clearcompleted)
 // footer.addEventListener('click', completed)
 displaylist(todolist, ullist)
+countitems();
 
 
 
