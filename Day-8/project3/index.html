@@ -26,7 +26,6 @@
 				const now = new Date();
 				const second = now.getSeconds();
 				const secondsDegrees = ((second / 60) * 360 + 90)
-				secondhand.style.transform = `rotate(${secondsDegrees}deg)`;
 				console.log(second);
 
 				const minute = now.getMinutes();
@@ -40,7 +39,6 @@
 				console.log(hour);
 
 			}
-
 			setInterval(setDate, 1000);
 
 	</script>

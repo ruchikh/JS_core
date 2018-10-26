@@ -1,6 +1,5 @@
 
-// let todovalue = document.querySelector(".todo-text");
-// let button = document.querySelector(".btn");
+
 var ullist = document.querySelector(".todo-mvc");
 var additem = document.querySelector(".addItems");
 var footer = document.querySelector(".footer");
@@ -35,19 +34,39 @@ function displaylist(ulitem = [], arrList){
       <input type = "checkbox" data-index = ${i} id ="obj${i}" class = "checkedid" ${plate.done ? 'checked' : ''}>
       <label for = "obj${i}" class = "${plate.done ? 'checkedid' : '' }">${plate.text}</label>
       <button data-id ="${i}" class = "delete">X</button>
+      <button data-id ="${i}" class = "edit">edit</button>
     </li>
     `;
   }).join('');
   countitems();
+ 
+}
+
+/*function edititem(edit = [], arrList1){
+  arrList1.innerHTML = edit.map((text, i) => {
+    return`
+    <li>
+      <input type = "text" data-index = ${i} id ="obj${i}" class = "edit" ${text.done}>
+    </li>
+    `;
+  }).join('');
+}*/
+
+function edititems(e){
+	if(e.target.classList.contains('edit')){
+		let id = e.target.dataset.id;
+}
 }
 
 function deleteitem(e){
 	if(e.target.classList.contains('delete')){
 		let id = e.target.dataset.id;
-		todolist.splice(id, 1);
+		todolist.splice(id, 1);	
 		displaylist(todolist, ullist);
 	}
 }
+
+
 
 function toggle(e) {
 	if(!e.target.classList.contains('checkedid')) return;
@@ -92,6 +111,7 @@ function countitems(){
 
 additem.addEventListener('submit', addList)
 ullist.addEventListener('click', deleteitem)
+ullist.addEventListener('click', edititems)
 ullist.addEventListener('click', toggle)
 completelink.addEventListener('click', completed)
 activelink.addEventListener('click', active)
