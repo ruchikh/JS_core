@@ -4,10 +4,6 @@ body {
 }
 
 .todo-text{
-	/*position: absolute;*/
-	/*top: 20%;*/
-	/*left: 40%;*/
-	/*transform: translate(-20%, -50%);*/
 	padding: 10px 20px;
 	border-bottom: 3px solid black;
 	background: transparent;
@@ -17,8 +13,6 @@ body {
 	max-width: 1100px;
 	width: 30%;
  	margin: 0 auto;
- 	/*text-align: center;*/
- 	
 }
 
 .secondary-wrapper {
