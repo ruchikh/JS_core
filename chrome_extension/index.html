@@ -12,14 +12,15 @@
   <div class="container">
     <div class="secondary-container">
       <div class="watch">
-        <div class="clock"></div>
+        <div class="clock time"></div>
         <div class="greeting"></div>
+      </div>
         <form>
           <div class="prompt">
             <div class="question">Hello, What's your name?</div>
             <input class="prompt-name" placeholder="Enter your name">
-            <ul class="userlist"></ul>
           </div>
+          <ul class="userlist"></ul>
         </form>        
       </div>
 
@@ -35,14 +36,20 @@
 
     <div class = "wrapper">
         <h1>Todo List</h1>
-        <div class= "secondary-wrapper">
-          <form class="addItems">
-            <input type="text" class="todo-text" placeholder="What needs to be done?">
-          </form>
-          <ul class="todo"></ul>
-        </div>
+      <div class= "secondary-wrapper">
+        <form class="addItems">
+          <input type="text" class="todo-text" placeholder="What needs to be done?">
+        </form>
+        <ul class="todo"></ul>
       </div>
-   
+      <footer class="footer">
+        <span class="counting"></span>
+        <span class="style_all"></span>
+        <span class="style_completed border">Completed</span>
+        <a href="" class="anchor">clear completed</a>
+      </footer>
+    </div>
+  </div>   
   <script src="./js/main.js"></script>
   <script src="./js/quotes.js"></script>
 </body>

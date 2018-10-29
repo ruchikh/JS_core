@@ -423,7 +423,7 @@ function changequotes(){
 // console.log(changequotes);
 function random(){
     let randomnumber = 0
-    randomnumber = Math.floor(Math.random() * 77);
+    randomnumber = Math.floor(Math.random() * quotes.length);
     return randomnumber;
 }
 

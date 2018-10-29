@@ -1,25 +1,52 @@
 // clock
 const clock = document.querySelector('.clock');
 var prompt = document.querySelector('.prompt-name')
+var greet = document.querySelector('.greeting')
 
 
-function setDate() {
-	const now = new Date();
-	const second = now.getSeconds();
-	const minute = now.getMinutes();
-	const hour = now.getHours();
-	clock.innerText = `${hour}: ${minute}: ${second}`
+function setDate(){
+	let now = new Date();
+	let second = now.getSeconds();
+	let minute = now.getMinutes();
+	let hours = now.getHours();
+
+	if(hours < 10){
+		hours = `0${hours}`
+
+	} if(minute < 10){
+		minute = `0${minute}`
+
+	} if(second < 10){
+		second = `0${second}`
+	}
+	
+	clock.innerText = `${hours} : ${minute}`;
+
+	
+	if(hours < 12){
+			greet.innerText =  `Good Morning`
+		}else if(hours >= 12 && hours <= 17){
+			greet.innerText = `Good Afternoon`
+		}else if(hours > 17 && hours <= 20 ){
+			greet.innerText = `Good Evening`
+	}else if(hours > 20){
+			greet.innerText = `Good Night`
+	}
 }
 setInterval(setDate, 1000);
 setDate();
-
 
 
 // Todo-list
 
 var ullist = document.querySelector(".todo");
 var additem = document.querySelector(".addItems");
-var footer = document.querySelector(".footer");
+var text = document.querySelector('.todo-text')
+var anchorlink = document.querySelector('.anchor')
+var countitem = document.querySelector(".counting")
+var completelink = document.querySelector(".style_completed");
+var alllink = document.querySelector('.style_all');
+anchorlink.style.display = 'none';
 
 
 
@@ -36,8 +63,10 @@ function addList(e){
 	todolist.push(obj);
 	displaylist(todolist, ullist);
 	localStorage.setItem('items', JSON.stringify(todolist));
-	this.reset();
+	e.target.reset();
+
 }
+
 
 function displaylist(ulitem = [], ullist){
   ullist.innerHTML = ulitem.map((plate, i) => {
@@ -45,28 +74,44 @@ function displaylist(ulitem = [], ullist){
     <li>
       <input type = "checkbox" data-index = ${i} data-id ="${i}" class = "checkedid" ${plate.done ? 'checked' : ''}>
       <label for = "${i}" class = "${plate.done ? 'checkedid' : '' }">${plate.text}</label>
-      <button data-id ="${i}" class = "delete">X</button>
+      <button data-id ="${i}" class = "delete">[X]</button>
     </li>
     `
   }).join('');
+  countitems();
  
 }
+
 
 function deleteitem(e){
 	if(e.target.classList.contains('delete')){
 		let id = e.target.dataset.id;
 		todolist.splice(id, 1);	
+		localStorage.setItem('items', JSON.stringify(todolist));
 		displaylist(todolist, ullist);
 	}
 }
 
+
 function toggle(e) {
+	anchorlink.style.display = 'inline-block';
 	if(!e.target.classList.contains('checkedid')) return;
 	let index = e.target.dataset.index;
 	todolist[index].done = !todolist[index].done;
-	localStorage.setItem('items', JSON.stringify(todolist));
 	displaylist(todolist, ullist);
 }
+
+function allitems(e) {
+	localStorage.setItem('alllist', JSON.stringify(todolist));
+	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
+}
+function clearcompleted(e) {
+	e.preventDefault();
+	todolist = todolist.filter(ele => ele.done == false);
+	localStorage.setItem('items', JSON.stringify(todolist));
+		displaylist(todolist, ullist);
+}
+
 
 function completed(e) {
 	let completeitem = todolist.filter(ele => ele.done);
@@ -76,48 +121,48 @@ function completed(e) {
 
 
 
+
+function countitems(){
+	var itemleft = todolist.filter(elem => !elem.done).length;
+	countitem.innerText = `${itemleft} Item Left`;
+};
+
+
+anchorlink.addEventListener('click', clearcompleted)
 additem.addEventListener('submit', addList)
 ullist.addEventListener('click', deleteitem)
 ullist.addEventListener('click', toggle)
+completelink.addEventListener('click', completed)
 displaylist(todolist, ullist)
+countitems();
 
 
+// USER INPUT
 
 let userName = document.querySelector('.prompt')
- var promttext = document.querySelector('.prompt-name')
- var promtuser = document.querySelector('.userlist');
-
-let name = JSON.parse(localStorage.getItem('user')) || [];
+var promttext = document.querySelector('.prompt-name')
+var promtuser = document.querySelector('.userlist');
+let name = JSON.parse(localStorage.getItem('user')) || '';
 
 function addName(e){
-	// e.preventDefault();
-	var text = (document.querySelector('.prompt-name')).value;
-  userName.innerHTML = `<h2> Welcome ${text} </h2>`
-	name.push(text);
-	 // displaylist(text, promtuser);
-	localStorage.setItem('user', JSON.stringify(name));
-	this.reset();
+	if(!name){
+		var text = (document.querySelector('.prompt-name')).value;
+		name = text;
 }
+  userName.innerHTML = `<h2> Welcome ${name} :)</h2>`
+	localStorage.setItem('user', JSON.stringify(name));
 
-/*function displayuser(useritem = [], promtuser){
-  promtuser.innerHTML = useritem.map((text, i) => {
-    return `
-    <li>
-      <input type = "text" data-index = ${i} data-id ="${i}">
-    </li>
-    `
-  }).join('');
- 
-}*/
-
-
+}
+if(name){
+	  addName();
+}
 
 
 promttext.addEventListener('keydown', function(e){
 	if(e.keyCode == 13){
 		addName();
 	}
-})
+});
 
 
 

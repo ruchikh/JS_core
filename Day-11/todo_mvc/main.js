@@ -8,6 +8,7 @@ var activelink = document.querySelector(".style_active");
 var alllink = document.querySelector('.style_all');
 var anchorlink = document.querySelector('.anchor')
 var countitem = document.querySelector(".counting")
+anchorlink.style.display = 'none';
 
 
 let todolist = JSON.parse(localStorage.getItem('items')) || [];
@@ -42,16 +43,6 @@ function displaylist(ulitem = [], arrList){
  
 }
 
-/*function edititem(edit = [], arrList1){
-  arrList1.innerHTML = edit.map((text, i) => {
-    return`
-    <li>
-      <input type = "text" data-index = ${i} id ="obj${i}" class = "edit" ${text.done}>
-    </li>
-    `;
-  }).join('');
-}*/
-
 function edititems(e){
 	if(e.target.classList.contains('edit')){
 		let id = e.target.dataset.id;
@@ -62,13 +53,16 @@ function deleteitem(e){
 	if(e.target.classList.contains('delete')){
 		let id = e.target.dataset.id;
 		todolist.splice(id, 1);	
+		localStorage.setItem('items', JSON.stringify(todolist));
 		displaylist(todolist, ullist);
 	}
 }
 
 
 
+
 function toggle(e) {
+	anchorlink.style.display = 'inline-block';
 	if(!e.target.classList.contains('checkedid')) return;
 	let index = e.target.dataset.index;
 	todolist[index].done = !todolist[index].done;
@@ -90,7 +84,6 @@ function active(e) {
 }
 
 function allitems(e) {
-	// let allitem = todolist.filter(ele => (ele.done == true && ele.done !== true));
 	localStorage.setItem('alllist', JSON.stringify(todolist));
 	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
 }
@@ -98,8 +91,8 @@ function allitems(e) {
 function clearcompleted(e) {
 	e.preventDefault();
 	todolist = todolist.filter(ele => ele.done == false);
-	localStorage.setItem('alllist', JSON.stringify(todolist));
-	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
+	localStorage.setItem('items', JSON.stringify(todolist));
+	displaylist(todolist, ullist);
 }
 
 function countitems(){
@@ -117,7 +110,6 @@ completelink.addEventListener('click', completed)
 activelink.addEventListener('click', active)
 alllink.addEventListener('click', allitems)
 anchorlink.addEventListener('click', clearcompleted)
-// footer.addEventListener('click', completed)
 displaylist(todolist, ullist)
 countitems();
 

@@ -1,6 +1,5 @@
 body{
 	background: url(../img/Material.jpeg);
-	/*background: rgba(2	0.8);*/
 	background-size: cover;
 	background-repeat: no-repeat;
 }
@@ -15,6 +14,7 @@ blockquote {
   margin-top: 2em;
   min-height: 200px;
   font-family: 'Mali', cursive;
+  text-align: center;
 }
 
 blockquote span {
@@ -28,6 +28,7 @@ blockquote span {
 }
 p{
 	color: #f2f2f2;
+
 }
 .button {
   text-align: center;
@@ -117,10 +118,48 @@ ul {
 	color: aqua;
 	/*display: none;*/
 }
-.delete:hover {
-	display: block;
+
+
+.anchor{
+	color: #222;
+	text-decoration: none;
+}
+.anchor:hover{
+	text-decoration: underline;
+}
+.border{
+	border: 1px solid transparent;
 }
 
+.footer {
+	margin-top: 10px;
+}
+
+.style_completed{
+	padding: 5px;
+	border-radius: 5px;
+	margin: 7px;
+	border: 1px solid white;
+	color: white;
+	cursor: pointer;
+	}
+	.anchor{
+		border: 1px solid white;
+		color: white;
+		padding: 4px;
+		border-radius: 4px;
+	}
+	.counting{
+		border: 1px solid white;
+		padding: 3px;
+		border-radius: 4px;
+		color: white;
+	}
+
+/*.style_completed:hover{
+	border: 1px solid rgba(175,47,47);
+	cursor: pointer;
+}*/
 .todo {
 	list-style: none;
 	margin: 0;
@@ -156,4 +195,11 @@ input[type=checkbox] {
 	max-width: 800px;
 	width: 100%;
 	margin: 0 auto;
+}
+
+.greeting{
+	text-align: center;
+	color: #fff;
+	font-size: 40px;
+	padding: 10px 0;
 }
