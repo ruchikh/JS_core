@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+// Define a constructor function called Persone which takes three arguments
+//(name, yearOfBirth, job) Initiate the properties
+let Person = function(name, yearOfBirth, job){
+	this.name = name;
+	this.yearOfBirth = yearOfBirth;
+	this.job = job;
+}
+
+// Define a function name calculateAge which returns the age of the person
+Person.prototype.calculateAge = function(yearOfBirth){
+    // console.log(Date.getFullYear - this.yearOfBirth);
+    return new Date().getFullYear() - this.yearOfBirth;
+ }
+
+// Use constructor function to make three objects with different values for example ('John', 1990, 'teacher')
+
+var hari  = new Person('hari', 1990, 'dev');
+var sid  = new Person('sid', 1980, 'dev');
+var schin  = new Person('schin', 1970, 'dev');
+
+
+
+// call the calculateAge function on each object
+
+hari.calculateAge();
+sid.calculateAge();
+schin.calculateAge()
+
+
+// Create an object called Teacher derived from the Person class, and implement a method called teach which receives a string called subject, and prints out.
+
+var Teacher = new Person
+
+
+	</script>
+
+</body>
+</html>

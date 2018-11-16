@@ -21,21 +21,23 @@ function setDate(){
 	}
 	
 	clock.innerText = `${hours} : ${minute}`;
-
+  setgreeting(hours)
 	
-	if(hours < 12){
-			greet.innerText =  `Good Morning`
-		}else if(hours >= 12 && hours <= 17){
-			greet.innerText = `Good Afternoon`
-		}else if(hours > 17 && hours <= 20 ){
-			greet.innerText = `Good Evening`
-	}else if(hours > 20){
-			greet.innerText = `Good Night`
-	}
 }
 setInterval(setDate, 1000);
 setDate();
 
+function setgreeting(hours){
+	if(hours < 12){
+			greet.innerText =  `Good Morning`
+		}else if(hours >= 12 && hours < 17){
+			greet.innerText = `Good Afternoon`
+		}else if(hours >= 17 && hours < 20 ){
+			greet.innerText = `Good Evening`
+	}else if(hours >= 20){
+			greet.innerText = `Good Night`
+	}
+}
 
 // Todo-list
 
@@ -84,11 +86,14 @@ function displaylist(ulitem = [], ullist){
 
 
 function deleteitem(e){
+
 	if(e.target.classList.contains('delete')){
 		let id = e.target.dataset.id;
 		todolist.splice(id, 1);	
 		localStorage.setItem('items', JSON.stringify(todolist));
 		displaylist(todolist, ullist);
+		anchorlink.style.display = 'none';
+
 	}
 }
 
@@ -106,6 +111,7 @@ function allitems(e) {
 	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
 }
 function clearcompleted(e) {
+	anchorlink.style.display = 'none';
 	e.preventDefault();
 	todolist = todolist.filter(ele => ele.done == false);
 	localStorage.setItem('items', JSON.stringify(todolist));

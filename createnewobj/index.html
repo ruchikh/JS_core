@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+ <script>
+ 	
+	/*var student = {
+			marks: {
+				math: 94,
+				english: 74,
+				physics: 72,
+			},
+			total: function total(){
+				return student.marks.math + student.marks.english + student.marks.physics;
+			},
+			percentage: function percentage(){
+				return (student.total()/300)*100;
+			}
+			passorfail: function passorfail(){
+				if(student.total() > 150){
+					console.log('pass')}else{ console.log('fail')}
+			}
+	};*/
+
+/*var student = {}
+function usercreate(phy, math, chem){
+  student.physics = phy;
+  student.math1 = math;
+  student.chem1 = chem;
+
+	student.total = function total(){
+		return student.physics + student.math1 + student.chem1;
+	},
+	student.percentage = function percrnetage(){
+		return (student.total()/300)*100;
+	},
+
+	student.passorfail = function passorfail(){
+		if(student.total() > 150){
+			console.log('pass');
+		}else {
+			console.log('fail');
+		}
+	}
+
+}*/
+
+// usercreate(95,95,95)
+
+
+
+
+var usernewcreate = {
+  	total: function total(){
+		return this.physics + this.math1 + this.chem1;
+	},
+  }
+
+  usernewcreate.marks = function marks(p,c,m){
+  	hphysics = p;
+  	chemistry = c;
+  	math = m;
+  }
+  
+
+	
+	/*percentage: function percrnetage(){
+		return (student.total()/300)*100;
+	},
+
+	passorfail: function passorfail(){
+		if(student.total() > 150){
+			console.log('pass');
+		}else {
+			console.log('fail');
+		}
+	}*/
+
+
+var newstudent = Object.create(usernewcreate);
+
+
+
+function userceate(p,c,m){
+this.p = p;
+this.c = c;
+this.m = m;
+}
+
+userceate.prototype.total = function(){
+return this.p + this.c + this.m;
+}
+
+userceate.prototype.percentage = function(){
+return (hari.total()/300*100)
+}
+var hari = new userceate(10,10,10);
+hari.total();
+ </script>
+}
+</body>
+</html>
