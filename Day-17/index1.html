@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<script>
+// The Cat
+
+// Create an object that represents a cat. It should have properties for tiredness, hunger, lonliness and happiness
+
+	class cat {
+		constructor(name){
+			this.name = name;
+			this.tiredness = 5;
+			this.hunger = 5;
+			this.lonliness = 5;
+			this.happiness = 5
+	}
+
+	checkstatus(){
+		if(this.key == 0){
+			return "Not";
+		}if(this.key > 0 $$ this.key >=3){
+			return "less";
+		}if(this.key > 3 $$ this.key >=6){
+			return "Moderate";
+		}if(this.key > 6 $$ this.key >=9){
+			return "Very";
+		}if(this.key == 10){
+			return "Extemely";
+		}
+	}
+	printstatus(){
+	 	console.log(`${this.name} is ${this.checkStatus(this.tired)} tired`);
+	 	console.log(`${this.name} is ${this.checkStatus(this.tired)} hungery`);
+	 	console.log(`${this.name} is ${this.checkStatus(this.tired)} lonly`);
+	 	console.log(`${this.name} is ${this.checkStatus(this.tired)} happy`);
+	}
+
+ 	increase(state, Number){
+ 		if(state)
+
+ 	}
+}
+
+// Write methods that increase and decrease those properties.
+
+
+// Write a method that prints out the cat's status in each area. (Be creative e.g. Paws is really hungry, Paws is VERY happy.)
+
+// Make the functions take arguments that increase or decrease arbitrary amounts
+
+
+
+
+// 2nd
+// An object-oriented book-list!
+
+// Create a class BookList
+
+/*class Booklist {
+
+}
+*/// Create another class called Book
+
+/*class Book{
+	constructor(Title, Genre){
+		title:'Title',
+		genre:'Genre',
+		author: {
+			firstname:'tom',
+			lastname:'kim'
+	}
+}
+}*/
+
+// BookLists should have the following properties:
+  // 1. Number of books marked as read
+  // 2. Number of books marked not read yet
+  // 3. A reference to the next book to read (book object)
+  // 4. A reference to the current book being read (book object)
+  // 5. A reference to the last book read (book object)
+  // 6. An array of all the Books
+
+// Each Book should have several properties:
+  // Title
+  // Genre
+  // Author
+  // Read (true or false)
+  // Read date, can be blank, otherwise needs to be a JS Date() object
+
+
+// Every Booklist should have a few methods:
+// .add(book)
+
+
+  // should add a book to the books list.
+
+  // var arratlist = [];
+
+// .finishCurrentBook()
+  // should mark the book that is currently being read as "read"
+  // Give it a read date of new Date(Date.now())
+  // Change the last book read to be the book that just got finished
+  // Change the current book to be the next book to be read
+  // Change the next book to be read property to be the first unread book you find in the list of books
+
+  
+	</script>
+</body>
+</html>

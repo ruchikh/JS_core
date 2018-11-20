@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script>
+/*var newobj;
+		function Animalcreate(name, age){
+      newobj = Object.create(animalfunc);
+      newobj.name = name;
+      newobj.age = age;
+      return newobj;
+		}
+
+		// var newanima = new Animalcreate('rabbit', 12);
+
+
+		var animalfunc = {
+			eat: function(){
+				console.log('can eat');
+			},
+			move: function(){
+				console.log('move');
+			}
+		}
+
+		// animalfunc.eat();
+
+		
+		function vegcreate(name, age){
+			var newveg = Animalcreate(name,age);
+			Object.setPrototypeOf(newveg, vegfunc);
+			return newveg;
+		}
+
+		var vegfunc = {
+			eatgrass: function(){
+				console.log('eatgrass');
+			}
+		}
+
+		Object.setPrototypeOf(vegfunc, animalfunc);
+
+
+		function createCarnivorous(name, age){
+			var Carnivorous = Animalcreate(name,age);
+			Object.setPrototypeOf(Carnivorous, carnfunc);
+			return Carnivorous;
+		}
+
+
+		var carnfunc = {
+			eatgrass: function(){
+				console.log('eatgrass');
+			}
+		}
+
+		Object.setPrototypeOf(carnfunc, animalfunc);
+
+		let rabbit = new vegcreate('rabbit', 10);
+
+*/
+
+/*class Animal {
+	constructor (name, age){
+		this.name = name;
+		this.age = age;
+	
+
+ this.eat = function(){
+	return this.name + " can eat"
+ }
+ this.move =  function(){
+	return this.name + 'can move'
+}
+}
+}
+
+class vegcreate extends Animal{
+	constructor(name,age){
+		super(name,age);
+		this.eatgrass = function(){
+    	return this.name + " can eatgrass"
+    }
+	}
+	}
+class rabbit extends vegcreate{
+	jump(){
+		console.log('rabbit can jump');
+	}
+}
+
+
+class carnivorous extends Animal{
+	constructor(name,age){
+		super(name,age);
+		this.eatall = function(){
+    	return this.name + " eats everythings";
+    }
+	}
+}
+
+let vegitarian = new vegcreate('rabbit', 12);
+let carnivorousani = new carnivorous('lion', 30); 
+
+*/
+
+
+function Animal(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+
+ Animal.prototype.eat = function(){
+	return this.name + ' eats';
+ }
+ Animal.prototype.move =  function(){
+	return this.name + ' can move'
+}
+
+function Rabbit(name){
+  this.name = name;
+}
+
+function lion(name){
+	this.name = name;
+}
+
+function createveg(name, age,x){;
+
+	Animal.call(this,name,age)
+	this.x = x;
+}
+
+createveg.prototype.eatgrass = function(){
+	return this.name + ' can Eat grass';
+}
+
+
+
+createveg.prototype = Object.create(Animal.prototype);
+
+let rabbit = new createveg('rabbit', 20);
+
+
+	</script>
+
+<!-- 	you can never understand everything 
+	but, you should undesstand the system
+	Ryan Dahl
+	creator of Node.js -->
+</body>
+</html>
