@@ -30,7 +30,7 @@ class Quiz {
 
   displayQuestionAnimal(){
   	if (this.currentindex>= questionlistAnimal.length){
-  		return this.displayscore();
+  		return displayquestion.innerText = `Your score is ${this.score}`;
   	}
   	displayquestion.innerText = questionlistAnimal[this.currentindex].text;
   	lowerparagraph.innerHTML = `Question ${this.currentindex + 1} out of ${questionlistAnimal.length}`
@@ -39,7 +39,7 @@ class Quiz {
 
   displayQuestionGk(){
   	if (this.currentindex>= questionlistGk.length){
-  		return this.displayscore();
+  		return displayquestion.innerText = `Your score is ${this.score}`;
   	}
   	displayquestion.innerText = questionlistGk[this.currentindex].text;
   	lowerparagraph.innerHTML = `Question ${this.currentindex + 1} out of ${questionlistGk.length}`
@@ -73,7 +73,7 @@ class Quiz {
  displayAnswerGk(){
  		displayanswer.innerHTML = "";
  	 	(questionlistGk[this.currentindex].choice).forEach((ele, i)=> { 
- 	 	displayanswer.innerHTML += `<li id=${i}>${ele}</li>
+ 	 	displayanswer.innerHTML += `<li class="list" id=${i}>${ele}</li>
  	 	<button class="btn" id=${i} >Submit</button>`;
  	 });
  }
@@ -83,6 +83,8 @@ class Quiz {
 }
 
 let quiz = new Quiz;
+console.log(quiz);
+
 
 function displayAll(){
 	/*CSS Style*/
@@ -90,7 +92,6 @@ function displayAll(){
 	btnstartanimal.style.display = 'none';
   containerdisplay.style.margin = '0';
   heading.style.display = 'none';
-  heading.style.color = 'white';
   quizstyle.style.marginTop = '10em';
   quizstyle.style.marginLeft = '5em';
 	displayquestion.style.display = 'inline-block';
@@ -104,6 +105,7 @@ function displayAll(){
 
 function submitquiz(e){
 	if(questionlist[quiz.currentindex].answer == questionlist[quiz.currentindex].choice[e.target.id]){
+		// console.log(quiz.score++);
 		quiz.score++;
 		quiz.updatescore();
 		quiz.displayQuestion();
@@ -118,70 +120,72 @@ function submitquiz(e){
 
 // Animal
 
-function displayAllAnimal(){
-	/*CSS Style*/
-	btnstartgk.style.display = 'none';
-	btnstartanimal.style.display = 'none';
-  containerdisplay.style.margin = '0';
-  heading.style.display = 'none';
-  quizstyle.style.marginTop = '10em';
-  quizstyle.style.marginLeft = '5em';
-	displayquestion.style.display = 'inline-block';
+// function displayAllAnimal(){
+// 	/*CSS Style*/
+// 	btnstartgk.style.display = 'none';
+// 	btnstartanimal.style.display = 'none';
+//   containerdisplay.style.margin = '0';
+//   heading.style.display = 'none';
+//   quizstyle.style.marginTop = '10em';
+//   quizstyle.style.marginLeft = '5em';
+// 	displayquestion.style.display = 'inline-block';
 
 
-	quiz.displayQuestionAnimal();
-	quiz.displayAnswerAnimal();
-	btnstart.style.display = 'none';
-	displayanswer.addEventListener('click', submitquizAmimal);
+// 	quiz.displayQuestionAnimal();
+// 	quiz.displayAnswerAnimal();
+// 	btnstart.style.display = 'none';
+// 	displayanswer.addEventListener('click', submitquizAmimal);
 
-}
-function submitquizAmimal(e){
-	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
-		quiz.score++;
-		quiz.updatescore();
-		quiz.displayQuestionAnimal();
-		quiz.displayAnswerAnimal();
-	} else{
-	quiz.updatescore();
-  quiz.displayQuestionAnimal();
-	quiz.displayAnswerAnimal();
-}
+// }
+// function submitquizAmimal(e){
+// 	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
+// 		console.log(quiz.score++);
+// 		quiz.score++;
+// 		quiz.updatescore();
+// 		quiz.displayQuestionAnimal();
+// 		quiz.displayAnswerAnimal();
+// 	} else{
+// 	quiz.updatescore();
+//   quiz.displayQuestionAnimal();
+// 	quiz.displayAnswerAnimal();
+// }
 
-}
-
-
-/*QUiz GK*/
-
-function displayAllGk(){
-	/*CSS Style*/
-	btnstartgk.style.display = 'none';
-	btnstartanimal.style.display = 'none';
-  containerdisplay.style.margin = '0';
-  heading.style.display = 'none';
-  quizstyle.style.marginTop = '10em';
-  quizstyle.style.marginLeft = '5em';
-	displayquestion.style.display = 'inline-block';
+// }
 
 
-	quiz.displayQuestionGk();
-	quiz.displayAnswerGk();
-	btnstart.style.display = 'none';
-	displayanswer.addEventListener('click', submitquizGk);
+// /*QUiz GK*/
 
-}
-function submitquizGk(e){
-	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
-		quiz.score++;
-		quiz.updatescore();
-		quiz.displayQuestionGk();
-		quiz.displayAnswerGk();
-	} else{
-	quiz.updatescore();
-  quiz.displayQuestionGk();
-	quiz.displayAnswerGk();
-}
+// function displayAllGk(){
+// 	/*CSS Style*/
+// 	btnstartgk.style.display = 'none';
+// 	btnstartanimal.style.display = 'none';
+//   containerdisplay.style.margin = '0';
+//   heading.style.display = 'none';
+//   quizstyle.style.marginTop = '10em';
+//   quizstyle.style.marginLeft = '5em';
+// 	displayquestion.style.display = 'inline-block';
 
-}
+
+// 	quiz.displayQuestionGk();
+// 	quiz.displayAnswerGk();
+// 	btnstart.style.display = 'none';
+// 	displayanswer.addEventListener('click', submitquizGk);
+
+// }
+// function submitquizGk(e){
+// 	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
+// 		console.log(quiz.score++);
+// 		quiz.score++;
+// 		quiz.updatescore();
+// 		quiz.displayQuestionGk();
+// 		quiz.displayAnswerGk();
+// 	} else{
+// 	quiz.updatescore();
+//   quiz.displayQuestionGk();
+// 	quiz.displayAnswerGk();
+// }
+
+// }
 
 /*Science Quiz*/
 
@@ -201,7 +205,7 @@ var questionlistAnimal = [
 new Question('Which food is the Giant Panda`s staple or main diet?', ['The bamboo', 'Insects',  'bread'], 'The bamboo'),
 new Question('Can bats be classified as birds or mammals.', ['cow' , 'Mammals', 'dog'], 'Mammals'),
 new Question('How many pairs of wings does a honey bee have?', ['two','four', 'six'], 'two'),
-new Question('Which animal is called a ‘doe’?', [' A doe is a female deer',' A doe is a male deer.', 'both'], ' A doe is a female deer'),
+new Question('Which animal is called a ‘doe’?', [' A doe is a female deer',' A doe is a male deer.', 'both'], 'A doe is a female deer'),
 new Question('What are female elephants called?', ['Cows','goat', 'both'], 'Cows'),
 new Question('Which animal is the largest primate in the world?', ['The Gorilla','lion', 'elephant'], 'The Gorilla'),
 ] ;
@@ -220,8 +224,8 @@ new Question('According to the saying, all roads lead to which European capital?
 
 
 btnstart.addEventListener('click', displayAll);
-btnstartanimal.addEventListener('click', displayAllAnimal);
-btnstartgk.addEventListener('click', displayAllGk);
+// btnstartanimal.addEventListener('click', displayAllAnimal);
+// btnstartgk.addEventListener('click', displayAllGk);
 
 
 

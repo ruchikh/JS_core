@@ -107,6 +107,71 @@
   // Change the next book to be read property to be the first unread book you find in the list of books
 
   
+  class Booklist {
+  constructor() {
+    this.bookArray = [];
+    this.read_count = 0;
+    this.not_read = 0;
+    this.next_book ;
+    this.current_book = 0;
+    this.last_book = 0;
+  }
+  add(book) {
+    this.bookArray.push(book);
+    this.updateStatus();
+  }
+  updateStatus() {
+    this.next_book = this.nextUneadIndex();
+    this.read_count = 0;
+    (this.bookArray).forEach((v, i) => {
+      if (v.readState) this.read_count++;
+    });
+    this.not_read = this.bookArray.length - this.read_count;
+  }
+
+  finishCurrentBook() {
+    if(! this.next_book) {
+      console.log("BookList is Empty Add more Books to Read");
+      return;
+    }
+    this.bookArray[this.current_book].readState = true;
+    this.bookArray[this.current_book].readDate = new Date(Date.now());
+    this.last_book = this.current_book;
+    this.current_book = this.next_book;
+    this.next_book = this.nextUneadIndex();
+    this.updateStatus();
+  }
+  nextUneadIndex() {
+    var index;
+    for (let i = 0; i < this.bookArray.length; i++) {
+      if (this.bookArray[i].readState == false && i != this.current_book) {
+        index = i;
+        break;
+      }
+    }
+    return index;
+  }
+
+}
+// Create another class called Book
+class Book {
+  constructor(title, author, genre) {
+    this.title = title;
+    this.author = author;
+    this.genre = genre;
+    this.readState = false;
+    this.readDate;
+  }
+}
+let library = new Booklist();
+let b1 = new Book("s", "sw", "swd");
+library.add(b1);
+let b2 = new Book("se", "sew", "sewd");
+library.add(b2);
+let b3 = new Book("sr", "srw", "rswd");
+library.add(b3);
+let b4 = new Book("sh", "shw", "hswd");
+library.add(b4);
 	</script>
 </body>
 </html>

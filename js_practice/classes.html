@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2 class="title">Classes: Html List Binding</h2>
+	<ul class="myList">
+	
+	</ul>
+
+
+	<script type="text/javascript">
+		
+		
+
+		class ListBinding {
+			constructor(element){
+				this.listElement = element;
+				this.textList = [];
+			}
+
+			static createListItem(text){
+				let li = document.createElement('li');
+				li.textContent = text;
+				return li;
+			}
+			
+			update(){
+				while(this.listElement.firstChild){
+					this.listElement.removeChild(this.listElement.firstChild);
+				}
+				for(let text of this.textList){
+					this.listElement.appendChild(ListBinding.createListItem(text));
+				}
+			}
+
+			add(text){
+				this.textList.push(text)
+				this.update();
+			}
+
+			remove(index){
+				this.textList.remove(index, 1);
+				this.update();
+			}
+		}
+
+		let myList = document.querySelector('.myList');
+		var listadd = new ListBinding(myList);
+
+	</script>
+</body>
+</html>

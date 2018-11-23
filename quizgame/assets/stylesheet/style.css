@@ -64,3 +64,16 @@ h1{
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
+
+.btn{
+	border: none;
+	border-radius: 4px;
+	margin: 10px;
+	background: red;
+}
+.list{
+	font-size: 20px;
+}
+.ullist{
+	margin-top: 40px;
+}
