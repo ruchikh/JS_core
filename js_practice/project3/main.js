@@ -1,4 +1,4 @@
-var canvas = document.querySelector('canvas');
+  var canvas = document.querySelector('canvas');
 var ctx = canvas.getContext('2d');
 
 var width = canvas.width = window.innerWidth;
@@ -63,15 +63,10 @@ function loop() {
   ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
   ctx.fillRect(0, 0, width, height);
 
-  while (balls.length < 25) {
-    var size = random(10,20);
+  while (balls.length < 50) {
+    var size = random(20,40);
     var ball = new Ball(
-      // ball position always drawn at least one ball width
-      // away from the edge of the canvas, to avoid drawing errors
-      random(0 + size,width - size),
-      random(0 + size,height - size),
-      random(-7,7),
-      random(-7,7),
+      random(0 + size,width - size),random(0 + size,height - size),random(-7,7),random(-7,7),
       'rgb(' + random(0,255) + ',' + random(0,255) + ',' + random(0,255) +')',
       size
     );
@@ -89,7 +84,7 @@ function loop() {
 loop();
 
 
-Ball.prototype.collisionDetect = function() {
+/*Ball.prototype.collisionDetect = function() {
   for (var j = 0; j < balls.length; j++) {
     if (!(this === balls[j])) {
       var dx = this.x - balls[j].x;
@@ -103,4 +98,4 @@ Ball.prototype.collisionDetect = function() {
   }
 }
 
-balls[i].collisionDetect();
+balls[i].collisionDetect();*/

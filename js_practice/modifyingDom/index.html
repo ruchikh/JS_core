@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dom Practice</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<!-- 	<div class="alert">
+  <strong>Hi there!</strong> You've read an important message.
+</div> -->
+<ol id="list">
+  <li>0</li>
+  <li>1</li>
+  <li>2</li>
+</ol>
+	<script>
+
+		let div = document.createElement('div');
+		let TextNode = document.createTextNode('Here I am');
+		div.className = "alert alert-success";
+		div.innerHTML = "<strong>Hi there!</strong> You've read an important message."
+		document.body.appendChild(div);
+
+		document.body.append(div);
+  	setTimeout(() => div.remove(), 2000);
+
+  	setTimeout(() => document.write('<b>...By this.</b>'), 2000);
+  	setTimeout(() => document.write('this is timeout function'), 2000);
+
+		let newli = document.createElement('li');
+		newli.innerHTML = "hello world!"
+
+	var sumall = [2,3,2,5,2,6,6,5];
+  function sumdouble(){
+  	for (let i=0; i<=sumall.length; i++){
+  		if(sumall[i] == sumall[i++]){
+  			return `${sumall[i]} : ${sumall[i]} + ${sumall[i++]} `
+  		}else {
+  			`${sumall[i]} : ${sumall[i]}`
+  		}
+
+// if(sumall[i] == sumall[i++]){
+// console.log( `${sumall[i]}: ${sumall[i]+sumall[i++]}`)
+}
+}
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Classes javascript</title>
+</head>
+<body>
+
+	<script>
+		
+		 /*function BankAccount(name, accounNumber, totalBalance, amount){
+		 	 obj = {}
+		 	 obj.name = name;
+		 	 obj.accounNumber = accounNumber;
+		 	 obj.totalBalance = totalBalance;
+		 	 obj.amount = amount;
+
+		 	 obj.deposit = function(){
+		 	 	console.log('deposit')
+		 	 	if(this.totalBalance < 0){
+		 	 		console.log('deposit money');
+		 	 	}else {
+		 	 		console.log('No need to Deposit')
+		 	 	}
+		 	 }
+
+		 	 obj.withdraw = function(){
+		 	 	 console.log('withdraw')
+		 	 	if(this.totalBalance < 0){
+		 	 		console.log(`${obj.name} can not withdraw money`)
+		 	 	}else {
+		 	 		console.log(`you can withdraw`)
+		 	 	}
+		 	 }
+		 	 return obj;
+		 }
+
+
+		 function checkingAccount(accountNumber, totalBalance, amount, fee){
+		 	let checekAmt1 = BankAccount(accountNumber, totalBalance, amount);
+		 	checekAmt1.fee = fee;
+
+		 	checekAmt1.deductFee = function(){
+		 		console.log('deductFree');
+		 	}
+         return checekAmt1;
+		 }
+
+		 var person = BankAccount('Ruchi', 23589657, 200000000, 586740000);
+		 person.deposit();
+		 person.withdraw();
+
+
+		 var personAmt = checkingAccount(23589657, 200000000, 586740000, 100);
+		 personAmt.deductFee();
+
+
+		 function SavingAccount(accountNumber, totalBalance, amount,intestRate){
+		 	var savingAmt = BankAccount(accountNumber, totalBalance, amount);
+		 	savingAmt.intestRate = intestRate;
+
+		 	savingAmt.intestRate = function(){
+		 		console.log('intestRate Dont Know')
+		 	}
+		 	return savingAmt;
+		 }
+
+		 var SavingAcut = SavingAccount(23589657, 200000000, 586740000, 100);
+		 SavingAcut.intestRate();
+*/
+
+
+		 /*Pseudoclassical Pattern*/
+
+		 /*var BankAccount = function(name, accountNumber, totalBalance, amount){
+		 	this.name = name;
+		 	this.accountNumber = accountNumber;
+		 	this.totalBalance = totalBalance;
+		 	this.amount = amount;
+		 }
+
+		 BankAccount.prototype.deposit = function(){
+		 	return `${this.name} can deposite Amount`;
+		 }
+
+		 BankAccount.prototype.withdraw = function(){
+		 	return `${this.name} can withdraw Amount`;
+		 }
+
+var checkingAccount = function(name, accountNumber, totalBalance, fee){
+	BankAccount.call(this, name, accountNumber, totalBalance)
+	this.fee = fee;
+}
+
+checkingAccount.prototype = Object.create(BankAccount.prototype)
+
+
+var checkingAmt = new checkingAccount('Ruchi', 200000000, 586740000, 100);
+console.log(checkingAmt.deposit())
+*/
+
+/*class*/
+
+
+class BankAccount {
+	constructor(name, accountNumber, totalBalance, amount){
+	this.name  = name;
+	this.accountNumber = accountNumber;
+	this.totalBalance =totalBalance;
+	this.amount = amount;
+	}
+
+	deposit(){
+		return `Deposit Money`
+	}
+
+	withdraw(){
+		return "withdraw Money"
+	}
+  
+  getBalance(){
+  	return `${totalBalance} is this much`
+  }
+}
+
+class checkingAccount extends BankAccount{
+	constructor(name, accountNumber, totalBalance, amount, fee){
+		super(name, accountNumber, totalBalance, amount)
+		this.fee = fee;
+	}
+
+	deductFee(){
+
+	}
+}
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
