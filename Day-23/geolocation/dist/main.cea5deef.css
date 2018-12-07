@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Merriweather|Slabo+27px");
+.header {
+  font-family: "Merriweather", serif;
+  text-align: center;
+  margin-top: 2em;
+}
+
+.btn-div {
+  text-align: center;
+}
+.btn-div .submit-btn {
+  padding: 0.5em 8em;
+  border-radius: 0.5em;
+  border: none;
+  background: #00ccff;
+  font-size: 1em;
+  color: white;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+}

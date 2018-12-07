@@ -37,14 +37,7 @@ class Quiz {
 
   }
 
-  displayQuestionGk(){
-  	if (this.currentindex>= questionlistGk.length){
-  		return displayquestion.innerText = `Your score is ${this.score}`;
-  	}
-  	displayquestion.innerText = questionlistGk[this.currentindex].text;
-  	lowerparagraph.innerHTML = `Question ${this.currentindex + 1} out of ${questionlistGk.length}`
 
-  }
 
 	displayQuestion(){
 		if(this.currentindex >= questionlist.length){
@@ -69,6 +62,15 @@ class Quiz {
  	 	<button class="btn" id=${i} >Submit</button>`;
  	 });
  }
+
+   displayQuestionGk(){
+  	if (this.currentindex>= questionlistGk.length){
+  		return displayquestion.innerText = `Your score is ${this.score}`;
+  	}
+  	displayquestion.innerText = questionlistGk[this.currentindex].text;
+  	lowerparagraph.innerHTML = `Question ${this.currentindex + 1} out of ${questionlistGk.length}`
+
+  }
 
  displayAnswerGk(){
  		displayanswer.innerHTML = "";
@@ -105,8 +107,9 @@ function displayAll(){
 
 function submitquiz(e){
 	if(questionlist[quiz.currentindex].answer == questionlist[quiz.currentindex].choice[e.target.id]){
-		// console.log(quiz.score++);
+		console.log(quiz.score);
 		quiz.score++;
+		console.log(quiz.score);
 		quiz.updatescore();
 		quiz.displayQuestion();
 		quiz.displayAnswerOption();
@@ -120,83 +123,83 @@ function submitquiz(e){
 
 // Animal
 
-// function displayAllAnimal(){
-// 	/*CSS Style*/
-// 	btnstartgk.style.display = 'none';
-// 	btnstartanimal.style.display = 'none';
-//   containerdisplay.style.margin = '0';
-//   heading.style.display = 'none';
-//   quizstyle.style.marginTop = '10em';
-//   quizstyle.style.marginLeft = '5em';
-// 	displayquestion.style.display = 'inline-block';
+function displayAllAnimal(){
+	/*CSS Style*/
+	btnstartgk.style.display = 'none';
+	btnstartanimal.style.display = 'none';
+  containerdisplay.style.margin = '0';
+  heading.style.display = 'none';
+  quizstyle.style.marginTop = '10em';
+  quizstyle.style.marginLeft = '5em';
+	displayquestion.style.display = 'inline-block';
 
 
-// 	quiz.displayQuestionAnimal();
-// 	quiz.displayAnswerAnimal();
-// 	btnstart.style.display = 'none';
-// 	displayanswer.addEventListener('click', submitquizAmimal);
+	quiz.displayQuestionAnimal();
+	quiz.displayAnswerAnimal();
+	btnstart.style.display = 'none';
+	displayanswer.addEventListener('click', submitquizAmimal);
 
-// }
-// function submitquizAmimal(e){
-// 	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
-// 		console.log(quiz.score++);
-// 		quiz.score++;
-// 		quiz.updatescore();
-// 		quiz.displayQuestionAnimal();
-// 		quiz.displayAnswerAnimal();
-// 	} else{
-// 	quiz.updatescore();
-//   quiz.displayQuestionAnimal();
-// 	quiz.displayAnswerAnimal();
-// }
+}
+function submitquizAmimal(e){
+	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
+		++quiz.score;
+		quiz.updatescore();
+		quiz.displayQuestionAnimal();
+		quiz.displayAnswerAnimal();
+	} else{
+	quiz.updatescore();
+  quiz.displayQuestionAnimal();
+	quiz.displayAnswerAnimal();
+}
 
-// }
-
-
-// /*QUiz GK*/
-
-// function displayAllGk(){
-// 	/*CSS Style*/
-// 	btnstartgk.style.display = 'none';
-// 	btnstartanimal.style.display = 'none';
-//   containerdisplay.style.margin = '0';
-//   heading.style.display = 'none';
-//   quizstyle.style.marginTop = '10em';
-//   quizstyle.style.marginLeft = '5em';
-// 	displayquestion.style.display = 'inline-block';
+}
 
 
-// 	quiz.displayQuestionGk();
-// 	quiz.displayAnswerGk();
-// 	btnstart.style.display = 'none';
-// 	displayanswer.addEventListener('click', submitquizGk);
+/*QUiz GK*/
 
-// }
-// function submitquizGk(e){
-// 	if(questionlistAnimal[quiz.currentindex].answer == questionlistAnimal[quiz.currentindex].choice[e.target.id]){
-// 		console.log(quiz.score++);
-// 		quiz.score++;
-// 		quiz.updatescore();
-// 		quiz.displayQuestionGk();
-// 		quiz.displayAnswerGk();
-// 	} else{
-// 	quiz.updatescore();
-//   quiz.displayQuestionGk();
-// 	quiz.displayAnswerGk();
-// }
+function displayAllGk(){
+	/*CSS Style*/
+	btnstartgk.style.display = 'none';
+	btnstartanimal.style.display = 'none';
+  containerdisplay.style.margin = '0';
+  heading.style.display = 'none';
+  quizstyle.style.marginTop = '10em';
+  quizstyle.style.marginLeft = '5em';
+	displayquestion.style.display = 'inline-block';
 
-// }
+
+	quiz.displayQuestionGk();
+	quiz.displayAnswerGk();
+	btnstart.style.display = 'none';
+	displayanswer.addEventListener('click', submitquizGk);
+
+}
+function submitquizGk(e){
+	if(questionlistGk[quiz.currentindex].answer == questionlistGk[quiz.currentindex].choice[e.target.id]){
+		console.log(quiz.score);
+		++quiz.score;
+		console.log(quiz.score);
+		quiz.updatescore();
+		quiz.displayQuestionGk();
+		quiz.displayAnswerGk();
+	} else{
+	quiz.updatescore();
+  quiz.displayQuestionGk();
+	quiz.displayAnswerGk();
+}
+
+}
 
 /*Science Quiz*/
 
 var questionlist = [ 
 new Question('Which is the coldest location in the earth? ', ['East Antarctica', 'Genotypic character',  'Cell division'], 'East Antarctica'),
-new Question('Which is the hottest place in the earth? ', ['Ethiopia' , 'Protein 3D structure', 'Gene bank protein'], 'Ethiopia '),
+new Question('Which is the hottest place in the earth? ', ['Ethiopia' , 'Protein 3D structure', 'Gene bank protein'], 'Ethiopia'),
 new Question('Which is the animal referred as the ship of the desert? ', ['Camel','cow', 'cat'], 'Camel'),
 new Question('Which is the nearest star to planet earth?', ['sun','moon', 'thus'], 'sun'),
-new Question('Which is the least populated country in the world?', ['Vatican City', 'india', 'US'], 'Vatican City '),
-new Question('Which is the heavier metal of these two? Gold or Silver?', ['Gold', 'Genotypic character',  'Cell division'], 'East Antarctica'),
-new Question('Which is the longest river on the earth? ', ['Nile', 'Genotypic character',  'Cell division'], 'East Antarctica'),
+new Question('Which is the least populated country in the world?', ['Vatican City', 'india', 'US'], 'Vatican City'),
+new Question('Which is the heavier metal of these two? Gold or Silver?', ['Gold', 'Genotypic character',  'Cell division'], 'Gold'),
+new Question('Which is the longest river on the earth? ', ['Nile', 'Genotypic character',  'Cell division'], 'Nile'),
 ] ;
 
 /*Animal Quiz*/
@@ -205,7 +208,7 @@ var questionlistAnimal = [
 new Question('Which food is the Giant Panda`s staple or main diet?', ['The bamboo', 'Insects',  'bread'], 'The bamboo'),
 new Question('Can bats be classified as birds or mammals.', ['cow' , 'Mammals', 'dog'], 'Mammals'),
 new Question('How many pairs of wings does a honey bee have?', ['two','four', 'six'], 'two'),
-new Question('Which animal is called a ‘doe’?', [' A doe is a female deer',' A doe is a male deer.', 'both'], 'A doe is a female deer'),
+new Question('Which animal is called a ‘doe’?', ['A doe is a female deer','A doe is a male deer.', 'both'], 'A doe is a female deer'),
 new Question('What are female elephants called?', ['Cows','goat', 'both'], 'Cows'),
 new Question('Which animal is the largest primate in the world?', ['The Gorilla','lion', 'elephant'], 'The Gorilla'),
 ] ;
@@ -215,7 +218,7 @@ new Question('Which animal is the largest primate in the world?', ['The Gorilla'
 var questionlistGk = [ 
 new Question('On a normal computer keyboard with which number does * share a key?', ['Eight', 'nine',  'seven'], 'Eight'),
 new Question('Which word meaning ‘to become smaller` is also used for a psychiatrist?', ['Shrink' , 'mrink', 'both'], 'Shrink'),
-new Question('What was the nationality of the great writer George Bernard Shaw?', ['He was Irish','He was Narish', 'both'], 'two'),
+new Question('What was the nationality of the great writer George Bernard Shaw?', ['He was Irish','He was Narish', 'both'], 'He was Irish'),
 new Question('What type of an animal is a Samoyed?', ['Dog','Cat', 'Mouse'], 'Dog'),
 new Question('Where in the human body is the occiput?', ['Head','Hand', 'eyes'], 'Head'),
 new Question('According to the saying, all roads lead to which European capital?', ['Rome','US', 'UK'], 'Rome'),
@@ -224,8 +227,8 @@ new Question('According to the saying, all roads lead to which European capital?
 
 
 btnstart.addEventListener('click', displayAll);
-// btnstartanimal.addEventListener('click', displayAllAnimal);
-// btnstartgk.addEventListener('click', displayAllGk);
+btnstartanimal.addEventListener('click', displayAllAnimal);
+btnstartgk.addEventListener('click', displayAllGk);
 
 
 

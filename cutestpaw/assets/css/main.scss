@@ -1,0 +1,34 @@
+.main-container{
+	max-width: 1100;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.header{
+	background: black;
+	color: white;
+	height: 50px;
+	width: 100%;
+	text-align: center;
+}
+
+.ullist {
+	display: flex;
+	justify-content: center;
+   text-align: center;
+	list-style: none;
+	justify-content: space-evenly;
+
+	li{
+		margin-top: 18px;
+		cursor: pointer;
+		font-size: 1.3em;
+	}
+}
+
+img {
+	// margin: 0 auto;
+	text-align: center;
+}
+body{
+}

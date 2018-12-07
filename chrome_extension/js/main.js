@@ -86,13 +86,13 @@ function displaylist(ulitem = [], ullist){
 
 
 function deleteitem(e){
-
+e.preventDefault();
 	if(e.target.classList.contains('delete')){
+		anchorlink.style.display = 'none';
 		let id = e.target.dataset.id;
 		todolist.splice(id, 1);	
 		localStorage.setItem('items', JSON.stringify(todolist));
 		displaylist(todolist, ullist);
-		anchorlink.style.display = 'none';
 
 	}
 }
@@ -110,6 +110,7 @@ function allitems(e) {
 	localStorage.setItem('alllist', JSON.stringify(todolist));
 	displaylist(JSON.parse(localStorage.getItem('alllist')), ullist);
 }
+
 function clearcompleted(e) {
 	anchorlink.style.display = 'none';
 	e.preventDefault();
@@ -117,7 +118,6 @@ function clearcompleted(e) {
 	localStorage.setItem('items', JSON.stringify(todolist));
 		displaylist(todolist, ullist);
 }
-
 
 function completed(e) {
 	let completeitem = todolist.filter(ele => ele.done);
@@ -169,6 +169,7 @@ promttext.addEventListener('keydown', function(e){
 		addName();
 	}
 });
+
 function Person(firstName, lastName) { 
 	this.firstName = firstName,
 	this.lastName = lastName, 
@@ -178,6 +179,14 @@ function Person(firstName, lastName) {
 }
 
 
+var background = document.querySelector('body')
+function setRandomBg(){
+		var url = `https://api.unsplash.com/photos/random/?client_id=812c49a270eb37b905abac01de73a44085f7e6f8791eeed2aac1c87f04a18169`;
+	  fetch(url).then(data => data.json()).then(resp => {
+	  background.style.backgroundImage = `url(${resp.urls.regular})`;
+	});
+}
 
+setRandomBg();
 
 
