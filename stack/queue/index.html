@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Queue</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+// 	class Queue {
+// 	  constructor() {
+// 	    this.storage = ""; 
+// 	    console.log(this.storage)
+// 	  }
+// 	  isEmpty() {
+// 	  	if(this.storage.length <= 0){
+// 	  		return true
+// 	  	}else return false
+// 	  }
+// 	  enqueue(value) {
+//  			var store = this.storage += value
+//  			return store.length
+// 	  }
+// 	  dequeue() {
+// 	  	var store = this.storage;
+// 	  	var deleted = store.slice(0, 1);
+// 	  	this.storage = store.slice(1)
+// 	  	return deleted
+// 	  }
+// 	  peek() {
+// 	  	var store = this.storage;
+// 	  	return store[0]
+// 	  }
+// 	  size() {
+// 	  	return this.storage.length
+// 	  }
+// }
+
+// const queue = new Queue();
+// console.log(queue.isEmpty())
+// console.log(queue.enqueue('a'))
+// console.log(queue.enqueue('b'))
+// console.log(queue.enqueue('c'))
+// console.log(queue.dequeue())
+// console.log(queue.peek())
+// console.log(queue.size())
+
+
+
+
+class Queue {
+  constructor(maxcapacity) {
+  	this.maxcapacity  = maxcapacity
+    this.storage = {}; // Object Implementation
+  }
+
+  isEmpty() {
+  	if(Object.keys(this.storage) <= 0){
+  		return true;
+  	}else return false
+  }
+
+  enqueue(key, value) {
+  	if(Object.keys(this.storage).length > this.maxcapacity){
+  		return console.log('Max capacity already reached') 
+  	}else
+  	return this.storage[key] = value;
+  }
+
+  dequeue() {
+  	var store = this.storage;
+    var deleteElm =  Object.keys(store).splice(0, 1);
+    delete this.storage[deleteElm[0]]
+  	return deleteElm
+  }
+
+  peek() {
+  	return Object.keys(this.storage)[0]
+  }
+  size() {
+  	return Object.keys(this.storage).length
+  }
+
+  contains(value) {
+  	for(var values in this.storage){
+  		if(value == this.storage[values]){
+  			return true
+  		}else return false
+  	}
+  }
+
+  sort() {
+  	for(var values in this.storage)
+  		return Object.values(this.storage).sort((a, b) => b.values - a.values)
+  }
+}
+
+const queue = new Queue(3);
+console.log(queue.isEmpty())
+console.log(queue.enqueue('name', 'ruchi'))
+console.log(queue.enqueue('lastname', 'kharwar'))
+console.log(queue.enqueue('age', 25))
+console.log(queue.enqueue('id', 1))
+console.log(queue.enqueue('country', 'india'))
+
+
+console.log(queue.isEmpty())
+// console.log(queue.dequeue())
+console.log(queue.peek())
+console.log(queue.size())
+console.log(queue.contains(24))
+console.log(queue.sort())
+
+
+
+
+</script>
+
+</body>
+</html>

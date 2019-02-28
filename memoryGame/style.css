@@ -1,0 +1,94 @@
+html, body, div, span, applet, object, iframe,blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	width: 60%;
+	margin: 0 auto;
+}
+
+.paragraph{
+	height: 100px;
+	width: 100px;
+	background: red;
+}
+
+
+.main-container{
+	display: grid;
+	grid-template-columns: repeat(4, 180px);
+	margin-top: 4em;
+	/*place-items: center;*/
+	/*grid-gap: 10px;*/
+	/*border: 1px solid black;*/
+}
+
+.box{
+	border: 1px solid grey;
+		text-align: center;
+		height: 140px;
+		/*display: none;*/
+ background-image: radial-gradient(circle, red, yellow, green);
+		/*background: black*/
+}
+
+.box i {
+	display: none;
+}
+.fab{
+	font-size: 6em;
+	margin-top: 0.3em;
+
+}
+.fas{
+	font-size: 6em;
+	margin-top: 0.3em;
+
+
+}
+
+i{}
+
+.unhide i {
+  display: inline-block;
+  transition-duration: 2s; 
+}
