@@ -18,23 +18,12 @@ setcolor.forEach(item => {
 	item.style.background = color;
 })
 
-let colorname = document.querySelectorAll('.colorname');
-colorname.forEach(val => {
-	console.log(val)
-	const color = get_random_color();
-	val.innerHTML = color.toUpperCase().split('#').join('');
-})
-
 
 button.addEventListener('click', () => {
   setcolor.forEach(item => {
-		const color = get_random_color();
-		item.innerHTML = color;
-	let colorname = document.querySelectorAll('.colorname');
-	colorname.forEach(val => {
-		val.innerHTML = color.toUpperCase().split('#').join('');
-	})
-		item.style.background = color;
-	})
+	const color = get_random_color();
+	item.innerHTML = color;
+	item.style.background = color;
+})
 
 });
