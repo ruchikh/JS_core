@@ -12,17 +12,20 @@ img{
 
 }
 .header{
-	padding: 20px;
+	padding: 18px;
 	background: #101112;
 	color: white;
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	/*justify-content: space-between;*/
 }
 
 .logo{
-	padding-top: 0.8em;
+	/*padding-top: 0.1em;*/
 	font-size: 25px;
-	margin-left: 0.5em;
+	margin-left: 0.1em;
+	display: inline-block;
+	vertical-align: 13px;
 }
 
 .setcolor{
@@ -31,6 +34,7 @@ img{
 	background: black;
 	font-size: 30px;
 	border: 1px solid grey;
+	box-shadow: 0 0 13px black;
 }
 
 .main-container{
@@ -55,5 +59,46 @@ img{
 
 .nav-bar{
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	margin-top: 1.5em;
+}
+.icons{
+	display: flex;
+	cursor: pointer;
+}
+i{
+	margin-right: 10px;
+	cursor: pointer;
+
+}
+
+button{
+	padding: 8px 12px;
+	border-radius: 18px;
+	border: none;
+	margin-left: 1em;
+	cursor: pointer;
+	outline: none;
+	font-size: 20px;
+}
+
+button .fa-spinner:hover{
+	/*transform: rotate(-180deg);*/
+	 transform: rotateZ(180deg);
+}
+
+ p{
+	vertical-align: bottom;
+}
+
+.footer{
+	background: #101112;
+	position: absolute;
+	width: 100%;
+	top: 89%;
+	padding: 15px 0;
+	color: white;
+	text-align: center;
+
+
 }

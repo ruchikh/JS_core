@@ -1,23 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset = "utf-8" /> 
 	<title>Color Generator</title>
+	<link rel="icon" type="image/png" href="media/color1.jpg" />
 	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
 	<section>
 		<header class="header">
 			
 				<div>
-					<img src="media/color1.jpg"><span class="logo">ColorGenerate</span>
+					<img src="media/color1.jpg">
+					<span class="logo">ColorGenerator</span>
 				</div>
-				<!-- <div class="logo"></div> -->
 			
 			<div class="nav-bar">
-				<div>WebSite Colors</div>
-				<div>Template</div>
-				<div>Twiiter Icon</div>
-				<div>fb Icon</div>
+				<div><i class="fab fa-elementor"></i>WebSite Colors</div>
+				<div><i class="fas fa-image"></i>Template</div>
+				<div class="icons">
+				<div><i class="fab fa-facebook-square"></i></div>
+				<div><i class="fab fa-twitter-square"></i></div>
+			</div>
 			</div>
 		</header>
 		<div class="main-container">
@@ -35,8 +40,14 @@
 			<p class="colorname"></p>
 		</div>
 		<div>
-			<button class="button">Generate Color</button>
+			<button class="button"><i class="fas fa-spinner"></i>Generate</button>
+			<!-- <button type="button" id="b1" class="button" onclick="get_random_color()">Button 1</button> -->
+
 		</div>
+		<footer class="footer">
+			<p>
+				@Copyright
+		</footer>
 	</section>
 	
 	<script type="text/javascript" src="main.js"></script>
