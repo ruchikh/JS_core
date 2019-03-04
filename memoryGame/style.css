@@ -42,8 +42,14 @@ table {
 }
 
 body {
-	width: 60%;
-	margin: 0 auto;
+	/*margin: 0 auto;*/
+	/*padding:10px;*/
+  width:100%;
+  /*height:500px;*/
+  /*background:#464b54;*/
+  /*box-shadow:2px 2px 20px #444;*/
+  /*border:solid 2px #444;*/
+  border-radius:10px;
 }
 
 .paragraph{
@@ -54,6 +60,8 @@ body {
 
 
 .main-container{
+	width: 60%;
+	margin: 0 auto;
 	display: grid;
 	grid-template-columns: repeat(4, 180px);
 }
@@ -61,19 +69,20 @@ body {
 .box{
   /*transform: rotate(45deg);*/
 	border: 2px solid white;
+	border-radius: 10px;
 	text-align: center;
-	height: 130px;
+	height: 140px;
  /*background-image: radial-gradient(circle, red, yellow, green);*/
-	background: url('./img/hex.jpg') no-repeat;
+	background: url('./img/hex1.jpg') no-repeat;
 	background-size: cover;
 	color: white;
 	font-weight: 600;
 
-	  position: relative;
+	position: relative;
   transform: scale(1);
-  transform-style: preserve-3d;
+  /*transform-style: preserve-3d;
   transition: transform .5s;
-  box-shadow: 1px 1px 1px rgba(0,0,0,.3);
+  box-shadow: 1px 1px 1px rgba(0,0,0,.3);*/
 
 }
 
@@ -83,8 +92,16 @@ body {
   transform: rotate(180deg);
 }
 h1{
+	/*text-align: center;*/
+	/*width: 60%*/
+	/*margin: 0.3em 12em;*/
+	margin: 0;
 	text-align: center;
-	font-size: 40px;
+	font-size: 37px;
+	color: white;
+	background: #22313F;
+	width: 100%;
+	padding: 10px 0;
 }
 
 .box i {
@@ -98,8 +115,6 @@ h1{
 .fas{
 	font-size: 6em;
 	margin-top: 0.3em;
-
-
 }
 
 .unhide i {
@@ -109,6 +124,99 @@ h1{
 
 .contain{
 	font-size: 30px;
-	margin-left: 4em;
+	margin-left: 10em;
+	display: inline-block;
 	margin-top: 0;
+	color: white;
 }
+
+.container{
+	font-size: 30px;
+	margin-left: 4em;
+	/*margin-top: 0;*/
+}
+
+.timer{
+	margin: 0.3em 12.5em;
+	color: white;
+	/*border-bottom: 1px solid white;*/
+	/*text-align: center;*/
+}
+
+
+html {
+  min-height: 100%;
+  background: #B8BEB4;
+  background: radial-gradient(#B8BEB4, #22313F);
+  background-size: cover;
+}
+
+.triangle{
+  width: 50vw;
+  height: 50vw;
+  max-height: 75vh;
+  max-width: 75vh; 
+  position:absolute;
+  top:10vw;
+  left:25vw;
+  box-shadow: 2px 2px 3px #555;
+  background-size:cover;
+  background-blend-mode: screen;
+}
+.first{
+  -webkit-clip-path: polygon(0 100%, 0 0, 100% 100%);
+  /*clip-path: polygon(0 100%, 0 0, 100% 100%);*/
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125101/rickAndMorty2.jpg");
+  
+}
+.second{
+  clip-path: polygon(100% 0, 0 0, 0% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 0, 100% 100%);
+  background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/125101/rickAndMorty3.jpg");
+  background-position:center;
+}
+
+
+
+
+
+/*#box{
+  padding:10px;
+  width:660px;
+  height:500px;
+  margin:10px;
+  background:#464b54;
+  box-shadow:2px 2px 20px #444;
+  border:solid 2px #444;
+  border-radius:10px;
+  
+}*/
+/*.transition{
+  width:140px;
+  border:solid 1px #fff;
+  height:140px;
+  display:block;
+  float:left;
+  margin:10px;
+  border-radius:10px;
+  background:#313742;
+  overflow:hidden;
+}
+.subtransition{
+  -webkit-transition:all 0.4s ease-in-out;
+  -moz-transition:all 0.4s ease-in-out;
+  -o-transition:all 0.4s ease-in-out;
+  transition:all 0.4s ease-in-out;
+  background:#39d1b4;
+  opacity:0.6;
+}
+
+#six{
+  width:80px;
+  height:140px;
+  transform:skew(-45deg);
+  margin-left:-350px;
+}
+.transition:hover #six{
+  margin-left:210px;
+}*/

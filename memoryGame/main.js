@@ -35,6 +35,14 @@ function displayImage(event){
 	target.classList.add('unhide')
 	mainContainerData.push(target)
 	boxData.push(targetIcon)
+	count = count + 1;
+
+	if(count == 1){
+    second = 0;
+    minute = 0; 
+    hour = 0;
+    timerStart();
+	}
 
 
 	let hideBox = () => {
@@ -44,13 +52,36 @@ function displayImage(event){
 		boxData.splice(0, boxData.length);
 		mainContainerData.splice(0, mainContainerData.length)
 		countMatch.textContent = `Match Count: ${count}`;
-		if(count == 8){
-			alert("Congrates You win The Game");
-		}
+		// if(count == 8){
+		// 	alert("Congrates You win The Game");
+		// }
 		}
 	}
 	setTimeout(hideBox, 500);
 }
 
+var second = 0 , minute = 0, hour = 0;
+var timer = document.querySelector('.timer');
+console.log(timer)
+function timerStart(){
+	setInterval(function timeinterval(){
+		timer.innerHTML = minute+" :minute " +second+" :second";
+		console.log(timer.innerHTML)
+		second++;
+		if(second == 60){
+			minute++;
+			second=0;
+		}
+		if(minute == 60){
+			hour++;
+			minute = 0;
+		}
 
+
+	},500)	
+
+	if(second == 60){
+		alert('your game is over')
+	}
+}
 mainContainer.addEventListener('click', (e) => displayImage(e))
